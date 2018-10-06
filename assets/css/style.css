@@ -1,0 +1,27 @@
+body {
+    background-image: url('../images/space2.jpg');
+    background-repeat: repeat;
+    color: white;
+}
+
+h1 {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 50px;
+    text-align: center;
+}
+ 
+
+h2 {
+    color: black;
+    font-size: 25px;
+    position: center;
+}
+
+.content {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+    border: 2px dashed blue;
+    opacity: 0.5;
+}
