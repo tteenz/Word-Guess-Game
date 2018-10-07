@@ -1,5 +1,5 @@
-var win = 0;
-var winCountElement = document.getElementById("win-cou");
+
+
 
 // List of space words
 this.spaceWords = ['space', 'comet', 'stars', 'asteroid', 'mars',
@@ -8,15 +8,16 @@ this.spaceWords = ['space', 'comet', 'stars', 'asteroid', 'mars',
 var game = {
     guessed: [],
     left: 10,
+    win: 0,
 
     begin: function () {
-
+        this.tempString ="";
+        this.winCountElement = document.getElementById("win-count");
         this.complete = false;
         this.word = spaceWords[Math.floor(Math.random() * spaceWords.length)];
         this.$right = document.getElementById('right');
         this.$wrong = document.getElementById('wrong');
         this.$remain = document.getElementById('remain');
-
         this.$right.innerHTML = '_'.repeat(this.word.length);
 
     },
@@ -43,6 +44,16 @@ var game = {
             alert('You win! ' + this.word);
             this.complete = true;
         }
+
+        if (this.$right.innerHTML) {
+            tempString = wins + "";
+            for (var i = tempString.length; i < 45; i++) {
+                tempString += " ";
+            }
+            winCountElement.textContent = tempString;
+
+        }
+
     },
     wrong: function (correctLetter) {
         this.guessed.push(correctLetter);
@@ -67,14 +78,9 @@ document.onkeyup = function (event) {
     game.guess(correctLetter);
 };
 
-function Spaceman() {
-    tempString = wins + "";
-    for (var i = tempString.length; i < 45; i++) {
-        tempString += " ";
-    }
-    winCountElement.textContent = tempString;
 
-}
+
+
 
 
 
