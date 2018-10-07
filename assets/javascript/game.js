@@ -1,6 +1,3 @@
-
-
-
 // List of space words
 this.spaceWords = ['space', 'comet', 'stars', 'asteroid', 'mars',
     'jupiter', 'earth', 'neptune', 'mercury', 'moon',
@@ -11,7 +8,7 @@ var game = {
     win: 0,
 
     begin: function () {
-        this.tempString ="";
+        this.tempString = "";
         this.winCountElement = document.getElementById("win-count");
         this.complete = false;
         this.word = spaceWords[Math.floor(Math.random() * spaceWords.length)];
